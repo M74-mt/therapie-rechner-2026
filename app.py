@@ -20,7 +20,7 @@ preise = {
 
 st.set_page_config(page_title="Rezept-Termin Rechner", page_icon="🩺")
 
-st.title("🩺 Rezept-Rechner 2026")
+st.title("🩺 Rezept-Termin Rechner 2026")
 st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45€**")
 
 gesamtpreis = 0.0
