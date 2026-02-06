@@ -8,7 +8,7 @@ preise = {
     "KGG (Gerätegestützte KG)": 54.50,
     "NFA (Naturmoor)": 36.20,
     "FA (Warmpackung)": 15.80,
-    "US (Ultraschall)": 14.30
+    "US (Ultraschall)": 14.30,
     "ML30 (Lymphdrainage 30min)": 35.10,
     "ML45 (Lymphdrainage 45min)": 52.70,
     "ML60 (Lymphdrainage 60min)": 70.20,
