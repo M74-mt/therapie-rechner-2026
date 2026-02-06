@@ -18,10 +18,10 @@ preise = {
     "US (Ultraschall)": 14.30
 }
 
-st.set_page_config(page_title="Heilmittel-Rechner", page_icon="🩺")
+st.set_page_config(page_title="Rezept-Termin Rechner", page_icon="🩺")
 
-st.title("🩺 Therapie-Rechner 2026")
-st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45**")
+st.title("🩺 Rezept-Rechner 2026")
+st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45€**")
 
 gesamtpreis = 0.0
 auswahl_optionen = ["Keine Auswahl"] + list(preise.keys())
@@ -45,8 +45,8 @@ with c_res1:
     st.metric("Gesamtpreis", f"{gesamtpreis:,.2f} €")
 
 with c_res2:
-    # Kaufmännische Rundung: Preis / 45
+    # Kaufmännische Rundung: Preis / 45€
     anzahl_behandlungen = int(gesamtpreis / 45 + 0.5)
     st.metric("Anzahl Behandlungen", anzahl_behandlungen)
 
-st.caption("Basis: Preisliste 2026 ")
+st.caption("Basis: Preisliste 05.2025 ")
