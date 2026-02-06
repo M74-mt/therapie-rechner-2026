@@ -2,20 +2,21 @@ import streamlit as st
 
 # Datenbasis aus der therapie_preise_2026.sql 
 preise = {
-    "EIS (Eisbehandlung)": 12.90,
-    "ELO (Elektrotherapie)": 8.30,
-    "EXT (Extension)": 8.80,
-    "FA (Warmpackung)": 15.80,
-    "HL (Heißluft)": 7.50,
+    
+    "MT (Manuelle Therapie)": 34.80,
     "KG (Krankengymnastik)": 29.00,
     "KGG (Gerätegestützte KG)": 54.50,
-    "M (Massage)": 21.10,
+    "NFA (Naturmoor)": 36.20,
+    "FA (Warmpackung)": 15.80,
+    "US (Ultraschall)": 14.30
     "ML30 (Lymphdrainage 30min)": 35.10,
     "ML45 (Lymphdrainage 45min)": 52.70,
     "ML60 (Lymphdrainage 60min)": 70.20,
-    "MT (Manuelle Therapie)": 34.80,
-    "NFA (Naturmoor)": 36.20,
-    "US (Ultraschall)": 14.30
+    "HL (Heißluft)": 7.50,
+    "M (Massage)": 21.10,
+    "EIS (Eisbehandlung)": 12.90,
+    "ELO (Elektrotherapie)": 8.30,
+    "EXT (Extension)": 8.80,
 }
 
 st.set_page_config(page_title="Rezept-Termin Rechner", page_icon="🩺")
