@@ -1,6 +1,5 @@
 import streamlit as st
 
-# [cite_start]Datenbasis aus der therapie_preise_2026.sql [cite: 2]
 preise = {
     "MT (Manuelle Therapie)": 34.80,
     "KG (Krankengymnastik)": 29.00,
@@ -18,18 +17,27 @@ preise = {
     "EXT (Extension)": 8.80,
 }
 
-# Funktion zum Zurücksetzen der Eingaben
 def reset_form():
     for i in range(1, 5):
         st.session_state[f"sel_{i}"] = "Keine Auswahl"
         st.session_state[f"anz_{i}"] = 0
+
+def initialize_session_state():
+    for i in range(1, 5):
+        if f"sel_{i}" not in st.session_state:
+            st.session_state[f"sel_{i}"] = "Keine Auswahl"
+        if f"anz_{i}" not in st.session_state:
+            st.session_state[f"anz_{i}"] = 0
 
 st.set_page_config(page_title="Heilmittel-Rechner", page_icon="🩺")
 
 st.title("🩺 Therapie-Rechner 2026")
 st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45**")
 
-# Reset Button oben rechts platzieren
+# Initialize session state
+initialize_session_state()
+
+# Reset Button
 if st.button("Formular zurücksetzen 🔄"):
     reset_form()
     st.rerun()
@@ -41,10 +49,8 @@ auswahl_optionen = ["Keine Auswahl"] + list(preise.keys())
 for i in range(1, 5):
     col1, col2 = st.columns([3, 1])
     with col1:
-        # Nutzung von session_state für die Auswahl
         st.selectbox(f"Anwendung {i}", auswahl_optionen, key=f"sel_{i}")
     with col2:
-        # Nutzung von session_state für die Anzahl
         st.number_input("Anzahl", min_value=0, step=1, key=f"anz_{i}")
     
     # Preisberechnung
@@ -62,8 +68,7 @@ with c_res1:
     st.metric("Gesamtpreis", f"{gesamtpreis:,.2f} €")
 
 with c_res2:
-    # Kaufmännische Rundung: Preis / 45
-    anzahl_behandlungen = int(gesamtpreis / 45 + 0.5)
+    anzahl_behandlungen = round(gesamtpreis / 45)
     st.metric("Anzahl Behandlungen", anzahl_behandlungen)
 
-[cite_start]st.caption("Basis: Preisliste 2026 [cite: 2]")
+st.caption("Basis: Preisliste 2026")
