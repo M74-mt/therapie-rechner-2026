@@ -32,7 +32,7 @@ def initialize_session_state():
 st.set_page_config(page_title="Heilmittel-Rechner", page_icon="🩺")
 
 st.title("🩺 Therapie-Rechner 2026")
-st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45**")
+st.markdown("Berechnung nach dem Schlüssel: **Gesamtpreis / 45€**")
 
 # Initialize session state
 initialize_session_state()
